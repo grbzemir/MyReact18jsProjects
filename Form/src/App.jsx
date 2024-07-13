@@ -7,10 +7,15 @@ import TaskList from './Components/TaskList'
 
 function App() {
 
+  const createTask = (title, taskDesc) => {
+    console.log(title, taskDesc);
+    onCreate(title, taskDesc);
+  }
+
   return (
 
     <div className="App">
-      <TaskCreate />
+      <TaskCreate onCreate={createTask} />
       <h1>Görevlerim</h1>
       <TaskList />
     </div>

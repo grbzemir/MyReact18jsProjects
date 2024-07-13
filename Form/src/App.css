@@ -5,22 +5,20 @@
 }
 
 .task-create {
-
     width: 450px;
+}
 
+.task-update {
+    width: 100%;
 }
 
 .task-form {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-
 }
 
 .task-label {
-    margin: 10px 0;
-    /*Yukardan ve alttan 10px boşluk bırakır. sagdan soldan 0 */
-
+    margin: 10px 0px;
 }
 
 .task-input {
@@ -30,24 +28,24 @@
 }
 
 .task-button {
-
     border: 1px solid green;
-    margin: 10px 0;
+    margin: 10px 0px;
     padding: 10px;
     background-color: green;
     color: white;
     border-radius: 10px;
     font-size: 20px;
+}
 
+.update-button {
+    background-color: blueviolet;
 }
 
 .task-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
 }
-
 
 .task-show {
     border: 1px solid green;
@@ -60,30 +58,28 @@
     margin: 20px;
 }
 
-.task-delete {
-    padding: 5px;
-    font-size: 15px;
-    width: 60px;
-    border: none;
-    border: radius 30px;
-    background-color: red;
-    color: white;
-    margin-right: 10px;
+.task-title {
+    margin-bottom: 5px;
 }
-
 
 .task-edit {
     padding: 5px;
     font-size: 15px;
     width: 100px;
     border: none;
-    border: radius 30px;
+    border-radius: 30px;
     background-color: blue;
     color: white;
     margin-right: 10px;
 }
 
-.task-title {
-
-    margin-bottom: 5px;
+.task-delete {
+    padding: 5px;
+    font-size: 15px;
+    width: 60px;
+    border: none;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    margin-right: 10px;
 }

@@ -1,20 +1,15 @@
 import { useState } from 'react';
 
 function TaskCreate({ onCreate }) {
-
     const [title, setTitle] = useState('');
     const [taskDesc, setTaskDesc] = useState('');
 
     const handleChange = (event) => {
         setTitle(event.target.value);
-
     };
-
     const handleTaskChange = (event) => {
         setTaskDesc(event.target.value);
-
     };
-
     const handleSubmit = (event) => {
         event.preventDefault();
         onCreate(title, taskDesc);

@@ -17,3 +17,16 @@
 
 
 }
+
+.imageList {
+  columns: 250px 5;
+  column-gap: 10px;
+}
+
+.imageListImg {
+
+  width: 100%;
+  margin-bottom: 10px;
+
+
+}

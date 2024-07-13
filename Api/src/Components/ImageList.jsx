@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 function ImageList({ imagesPlaceHolder }) {
     return (
 
-        <div>
+        <div className='imageList'>
 
             {imagesPlaceHolder.map((image, index) => {
 

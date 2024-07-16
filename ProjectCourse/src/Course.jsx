@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 function Course({ id, content, title, price, removeOneCourse }) {
     return (
-        <div>
+        <div className="card">
             <div className="cardTitlePrice">
                 <h2 className="cardTitle">{title}</h2>
                 <h4 className="cardPrice">{price}TL</h4>
             </div>
+            <p>{content}</p>
             <button className="cardDeleteBtn" onClick={() => removeOneCourse(id)}>
                 Sil
             </button>

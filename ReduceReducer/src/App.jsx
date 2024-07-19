@@ -1,7 +1,10 @@
-import { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import Calculate from './Calculate';
+
+export const NumberContext = React.createContext();
 
 const initialValue = 0;
 
@@ -21,13 +24,18 @@ const reducer = (state, action) => {
 function App() {
   const [count, dispatch] = useReducer(reducer, initialValue);
 
+  useEffect(() => {
+
+    console.log('App.js useEffect çalıştı');
+
+  }, [count]);
+
   return (
     <div className="App">
-      <div>Sayi = {count} </div>
-      <button onClick={() => dispatch('increment')}>Arttır</button>
-      <button onClick={() => dispatch('decrement')}>Azalt</button>
-      <button onClick={() => dispatch('reset')}>Sıfırla</button>
-      <div>Count: {count}</div>
+      <NumberContext.Provider value={{ count: count, dispatch: dispatch }}>
+        {/* Context ile erişme provider ile kapsadık */}
+        <Calculate />
+      </NumberContext.Provider>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Home from './Components/Home'; // Varsayılan içe aktarımlar
-import Menu from './Components/Menu';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+import { Home } from './Components/Home';
+import { Menu } from './Components/Menu';
+import { About } from './Components/About';
+import { Contact } from './Components/Contact';
+import { Navbar } from './Components/Navbar';
+import { Footer } from './Components/Footer';
 
 function App() {
   return (

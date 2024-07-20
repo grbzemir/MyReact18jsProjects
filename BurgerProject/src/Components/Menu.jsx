@@ -1,6 +1,6 @@
 import React from 'react';
-import MenuItem from './MenuItem'; // Eğer MenuItem aynı klasördeyse
-import { Data } from '../Helpers/Data'; // Veriyi içe aktarımı
+import MenuItem from './MenuItem'; // Menü öğesi bileşeni
+import Data from '../Helpers/Data'; // Veri içe aktarıldı
 import '../styles/Menu.css';
 
 const Menu = () => {
@@ -22,4 +22,4 @@ const Menu = () => {
     );
 };
 
-export default Menu; // Varsayılan ihracat
+export default Menu;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MenuItem = ({ image, name, content, price }) => {
+function MenuItem({ image, name, content, price }) {
     return (
         <div className="menuItem">
             <div style={{ backgroundImage: `url(${image})` }}></div>
@@ -12,7 +12,7 @@ const MenuItem = ({ image, name, content, price }) => {
             </p>
         </div>
     );
-};
+}
 
 MenuItem.propTypes = {
     image: PropTypes.string.isRequired,

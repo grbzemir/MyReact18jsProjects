@@ -1,7 +1,7 @@
-import React from 'react';
 import BurgerImage from '../assets/burger.jpg'; // Burger resmi
 
-const Data = [
+
+export const Data = [
     {
         name: 'Efso Burger',
         image: BurgerImage,
@@ -76,4 +76,4 @@ const Data = [
     },
 ];
 
-export default Data;
+

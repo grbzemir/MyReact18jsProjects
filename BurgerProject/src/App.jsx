@@ -5,6 +5,7 @@ import Menu from './Components/Menu'; // Default import
 import About from './Components/About'; // Default import
 import Contact from './Components/Contact'; // Default import
 import Navbar from './Components/Navbar'; // Default import
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

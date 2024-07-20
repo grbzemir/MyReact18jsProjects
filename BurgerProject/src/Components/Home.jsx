@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className="mainPage" style={{ backgroundImage: `url(${BannerImage})` }}>
             <div className="order">
-                <Link to="/menu">Menu
+                <Link to="/menu">
                     <button>Sipariş Ver</button>
                 </Link>
             </div>

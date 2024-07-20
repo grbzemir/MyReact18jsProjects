@@ -1,6 +1,6 @@
 import React from 'react';
-import MenuItem from './MenuItem'; // Menü öğesi bileşeni
-import Data from '../Helpers/Data'; // Veri içe aktarıldı
+import MenuItem from '../Components/MenuItem';
+import Data from '../Helpers/Data'; // Varsayılan ihracatı içe aktar
 import '../styles/Menu.css';
 
 const Menu = () => {
@@ -8,15 +8,17 @@ const Menu = () => {
         <div className="menu">
             <h1 className="menuTitle">Burgerlerimiz</h1>
             <div className="menuList">
-                {Data.map((menuItem, key) => (
-                    <MenuItem
-                        key={key}
-                        image={menuItem.image}
-                        name={menuItem.name}
-                        content={menuItem.content}
-                        price={menuItem.price}
-                    />
-                ))}
+                {Data.map((menuItem, key) => {
+                    return (
+                        <MenuItem
+                            key={key}
+                            image={menuItem.image}
+                            name={menuItem.name}
+                            content={menuItem.content}
+                            price={menuItem.price}
+                        />
+                    );
+                })}
             </div>
         </div>
     );

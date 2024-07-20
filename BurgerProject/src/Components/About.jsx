@@ -2,7 +2,7 @@ import React from 'react';
 import BannerImage from '../assets/banneryeni.jpg';
 import '../styles/About.css';
 
-export const About = () => {
+const About = () => {
     return (
         <div className="about">
             <div
@@ -31,3 +31,5 @@ export const About = () => {
         </div>
     );
 };
+
+export default About; // Varsayılan ihracat

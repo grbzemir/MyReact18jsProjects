@@ -1,7 +1,8 @@
 import BurgerImage from '../assets/burger.jpg'; // Burger resmi
+import React from 'react';
 
 
-export const Data = [
+const Data = [
     {
         name: 'Efso Burger',
         image: BurgerImage,
@@ -77,3 +78,4 @@ export const Data = [
 ];
 
 
+export default Data; // Varsayılan ihracat

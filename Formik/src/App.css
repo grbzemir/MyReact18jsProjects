@@ -18,7 +18,8 @@ form label {
   margin-bottom: 10px;
 }
 
-input {
+input,
+select {
   width: 100%;
   padding: 8px 7px;
   font-size: 16px;

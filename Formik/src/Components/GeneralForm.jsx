@@ -1,17 +1,29 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { basicSchema } from '../schemas';
+
+const onSubmit = async (values, actions) => {
+    console.log(values);
+    console.log(actions);
+
+    await new Promise((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, 2000);
+    });
+    actions.resetForm();
+};
 
 function GeneralForm() {
-    const { values, errors, handleChange, handleSubmit } = useFormik({
+    const { values, errors, isSubmitting, handleChange, handleSubmit, resetForm } = useFormik({
         initialValues: {
             email: '',
             age: '',
             password: '',
             confirmPassword: '',
         },
-        onSubmit: values => {
-            console.log(values);
-        },
+        validationSchema: basicSchema,
+        onSubmit,
     });
 
     return (
@@ -25,7 +37,9 @@ function GeneralForm() {
                     placeholder="Enter Your Mail Please"
                     value={values.email}
                     onChange={handleChange}
+                    className={errors.email ? 'input-error' : ''}
                 />
+                {errors.email && <p className='error'>{errors.email}</p>}
             </div>
             <div>
                 <label>Age</label>
@@ -37,6 +51,7 @@ function GeneralForm() {
                     value={values.age}
                     onChange={handleChange}
                 />
+                {errors.age && <p className='error'>{errors.age}</p>}
             </div>
             <div>
                 <label>Password</label>
@@ -48,6 +63,7 @@ function GeneralForm() {
                     value={values.password}
                     onChange={handleChange}
                 />
+                {errors.password && <p className='error'>{errors.password}</p>}
             </div>
             <div className="confirmPassword">
                 <label>Confirm Password</label>
@@ -59,8 +75,9 @@ function GeneralForm() {
                     value={values.confirmPassword}
                     onChange={handleChange}
                 />
+                {errors.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
             </div>
-            <button type="submit">Kaydet</button>
+            <button disabled={isSubmitting} type="submit">Kaydet</button>
         </form>
     );
 }

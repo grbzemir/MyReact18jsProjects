@@ -24,20 +24,17 @@ select {
   padding: 8px 7px;
   font-size: 16px;
   border: 2px solid #4a5568;
-  background: #2d3748;
+  background-color: #2d3748;
   color: white;
   margin: 5px 0px;
   outline: none;
   border-radius: 10px;
-
 }
 
-/*İnputun placeHolderina eriştiğinde*/
 input::placeholder {
   color: lightgray;
 }
 
-/*Focus oldugunda*/
 input:focus {
   border-color: lightblue;
 }
@@ -46,14 +43,13 @@ button {
   width: 100%;
   padding: 8px 8px;
   margin: 16px 0px;
-  background: green;
+  background-color: green;
   color: white;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 20px;
   border: none;
-
 }
 
 .input-error {
@@ -64,4 +60,18 @@ button {
   color: #fc8181;
   font-size: 12px;
   text-align: left;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.checkbox input {
+  width: auto;
+}
+
+.formLink {
+  color: white;
 }

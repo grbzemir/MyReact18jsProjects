@@ -1,13 +1,12 @@
+import React from 'react';
 import { Form, Formik } from 'formik';
 import CustomInput from './CustomInput';
-import CustomSelect from './CustomSelect'; // Import the 'CustomSelect' component
 import { advancedSchema } from '../schemas';
-import CustomCheckBox from './CustomCheckBox';
+import CustomSelect from './CustomSelect';
+import CustomCheckbox from './CustomCheckBox';
+import { Link } from 'react-router-dom';
 
 const onSubmit = async (values, actions) => {
-    console.log(values);
-    console.log(actions);
-
     await new Promise((resolve) => {
         setTimeout(resolve, 1000);
     });
@@ -17,34 +16,37 @@ const onSubmit = async (values, actions) => {
 function PortalForm() {
     return (
         <>
-
-            {' '}
             <Formik
                 initialValues={{ username: '', university: '', isAccepted: false }}
                 onSubmit={onSubmit}
                 validationSchema={advancedSchema}
             >
-                {() => (
+                {({ isSubmitting }) => (
                     <Form>
                         <CustomInput
-                            label="Kullanıcı Adı"
+                            label="Kullancı Adı"
                             name="username"
                             type="text"
                             placeholder="Kullanıcı Adınızı Giriniz"
                         />
-
                         <CustomSelect
                             label="Okulunuz"
                             name="university"
-                            placeholder="Üniversitenizi Seçiniz"
+                            placeholder="Kullanıcı Üniversitenizi Seçiniz"
                         >
-                            <option value="">Üniversitenizi Seçiniz</option>
+                            <option value="">Lütfen Üniversiteniz Seçiniz</option>
                             <option value="bogazici">Boğaziçi Üniversitesi</option>
                             <option value="gsu">Galatasaray Üniversitesi</option>
-                            <option value="odtü">Orta Doğu Teknik Üniversitesi</option>
-                            <option value="itü">İstanbul Teknik Üniversitesi</option>
+                            <option value="odtü">ODTÜ</option>
+                            <option value="itü">İTÜ</option>
                         </CustomSelect>
-                        <CustomCheckBox type="checkbox" name="isAccepted" />
+                        <CustomCheckbox type="checkbox" name="isAccepted" />
+                        <button disabled={isSubmitting} type="submit">
+                            Kaydet
+                        </button>
+                        <Link className="formLink" to="/">
+                            Ana Forma Git
+                        </Link>
                     </Form>
                 )}
             </Formik>
@@ -53,4 +55,3 @@ function PortalForm() {
 }
 
 export default PortalForm;
-

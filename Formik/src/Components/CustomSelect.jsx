@@ -3,10 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function CustomSelect({ label, ...props }) {
+    // Add the 'label' prop to the props validation
 
     const [field, meta] = useField(props);
-    console.log(field);
-    console.log(meta);
+
     return (
         <>
             <label>{label}</label>

@@ -2,32 +2,31 @@ import { useField } from 'formik';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function CustomCheckBox({ label, ...props }) {
+function CustomCheckbox({ label, ...props }) {
+    // Add the 'label' prop to the props validation
 
     const [field, meta] = useField(props);
-    console.log(field);
-    console.log(meta);
+
     return (
         <>
-            <div className="checkBox">
-
-                <label>{label}</label>
-                <select
+            <div className="checkbox">
+                <input
                     {...field}
                     {...props}
                     className={meta.error ? 'input-error' : ''}
                 />
-
+                <span>Kullanım koşullarını kabul ediyorum</span>
             </div>
-
 
             {meta.error && <div className="error">{meta.error}</div>}
         </>
     );
+
+
 }
 
-CustomCheckBox.propTypes = {
+CustomCheckbox.propTypes = {
     label: PropTypes.string.isRequired,
 };
 
-export default CustomCheckBox;
+export default CustomCheckbox;

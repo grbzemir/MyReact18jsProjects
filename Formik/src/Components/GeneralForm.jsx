@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { basicSchema } from '../schemas';
+import { Link } from 'react-router-dom';
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -77,9 +78,15 @@ function GeneralForm() {
                 />
                 {errors.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
             </div>
-            <button disabled={isSubmitting} type="submit">Kaydet</button>
+            <button disabled={isSubmitting} type="submit">
+                Kaydet
+            </button>
+            <Link className="formLink" to="/portal">
+                Portala Git
+            </Link>
         </form>
     );
 }
 
 export default GeneralForm;
+
